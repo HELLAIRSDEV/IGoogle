@@ -13,22 +13,8 @@ JDK21="${JDK21:-$HOME/Library/Java/JavaVirtualMachines/jbr-21.0.11/Contents/Home
 
 mkdir -p dist
 
-echo "==> macOS release build"
-( cd macos && xcrun --sdk macosx swift build -c release )
-
-echo "==> Сборка IGoogle.app"
-rm -rf "dist/IGoogle.app"
-mkdir -p "dist/IGoogle.app/Contents/MacOS" "dist/IGoogle.app/Contents/Resources"
-cp macos/.build/release/IGoogle "dist/IGoogle.app/Contents/MacOS/IGoogle"
-cp macos/Packaging/Info.plist "dist/IGoogle.app/Contents/Info.plist"
-cp macos/Packaging/AppIcon.icns "dist/IGoogle.app/Contents/Resources/AppIcon.icns"
-chmod +x "dist/IGoogle.app/Contents/MacOS/IGoogle"
-codesign --force --deep --sign - "dist/IGoogle.app"
-
-echo "==> DMG"
-rm -f "dist/IGoogle-${VERSION}-macos.dmg"
-hdiutil create -volname "IGoogle" -srcfolder "dist/IGoogle.app" \
-  -ov -format UDZO "dist/IGoogle-${VERSION}-macos.dmg" >/dev/null
+echo "==> macOS (.app + красивый DMG)"
+VERSION="$VERSION" ./scripts/make_dmg.sh
 
 echo "==> Android release APK"
 GRADLE_BIN="$(ls -d "$HOME/.gradle/wrapper/dists/gradle-8.9-bin"/*/gradle-8.9/bin/gradle 2>/dev/null | head -1)"

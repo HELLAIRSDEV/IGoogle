@@ -6,9 +6,9 @@ let cs = CGColorSpaceCreateDeviceRGB()
 let ctx = CGContext(data: nil, width: S, height: S, bitsPerComponent: 8, bytesPerRow: 0,
                     space: cs, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
 
-let margin: CGFloat = 92
+let margin: CGFloat = 56
 let rect = CGRect(x: margin, y: margin, width: CGFloat(S) - 2*margin, height: CGFloat(S) - 2*margin)
-let bgPath = CGPath(roundedRect: rect, cornerWidth: 210, cornerHeight: 210, transform: nil)
+let bgPath = CGPath(roundedRect: rect, cornerWidth: 190, cornerHeight: 190, transform: nil)
 ctx.saveGState()
 ctx.addPath(bgPath); ctx.clip()
 let bg = CGGradient(colorsSpace: cs, colors: [
