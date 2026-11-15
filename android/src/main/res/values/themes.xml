@@ -1,0 +1,5 @@
+<resources>
+    <style name="Theme.IGoogle" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- Прозрачная тема для share-таргета: окно не мигает при передаче. -->
+    <style name="Theme.IGoogle.Translucent" parent="android:Theme.Translucent.NoTitleBar" />
+</resources>

@@ -1,0 +1,31 @@
+# macOS (Swift Package Manager)
+.build/
+.swiftpm/
+*.xcodeproj
+DerivedData/
+.DS_Store
+
+# Gradle / Android
+.gradle/
+build/
+local.properties
+*.apk
+*.aab
+captures/
+.kotlin/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Kotlin/Native
+*.klib
+.konan/
+
+# Release artifacts & signing secrets (не коммитим)
+dist/
+keystore.jks
+keystore.properties
+*.jks
+*.keystore

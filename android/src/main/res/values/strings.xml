@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">IGoogle</string>
+    <string name="share_to_mac">Отправить на MacBook</string>
+    <string name="share_with_mac">Поделиться на Mac</string>
+</resources>
