@@ -25,7 +25,7 @@ struct DMGBackground: View {
 
             Text("IGoogle")
                 .font(.system(size: 22, weight: .bold, design: .rounded))
-                .foregroundStyle(.white.opacity(0.92))
+                .foregroundStyle(.white)
                 .position(x: 450, y: 62)
 
             Image(systemName: "arrow.right")
@@ -36,8 +36,8 @@ struct DMGBackground: View {
                 .position(x: 450, y: 250)
 
             Text("Перетащите IGoogle в Applications")
-                .font(.system(size: 16, weight: .medium))
-                .foregroundStyle(.white.opacity(0.72))
+                .font(.system(size: 16, weight: .semibold))
+                .foregroundStyle(.white)
                 .position(x: 450, y: 434)
         }
         .frame(width: 900, height: 520)
