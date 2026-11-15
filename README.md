@@ -1,5 +1,7 @@
 # IGoogle
 
+**Скачать без сборки:** [⬇️ Android APK](https://github.com/HELLAIRSDEV/IGoogle/releases/download/v0.1.0/IGoogle-0.1.0-android.apk) · [⬇️ macOS DMG](https://github.com/HELLAIRSDEV/IGoogle/releases/download/v0.1.0/IGoogle-0.1.0-macos.dmg) · [все релизы](https://github.com/HELLAIRSDEV/IGoogle/releases)
+
 Полная интеграция **Pixel (Android) → MacBook** в духе связки iPhone ↔ Mac:
 
 | # | Возможность | Статус | Где реализовано |
