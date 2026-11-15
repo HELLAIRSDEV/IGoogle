@@ -29,3 +29,6 @@ keystore.jks
 keystore.properties
 *.jks
 *.keystore
+
+# демо-видео (хостим в релизе, не в git)
+docs/*.mp4
