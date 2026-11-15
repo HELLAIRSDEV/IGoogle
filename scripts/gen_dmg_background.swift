@@ -46,11 +46,20 @@ struct DMGBackground: View {
 
 @MainActor func renderBG(to path: String) {
     let r = ImageRenderer(content: DMGBackground())
-    r.scale = 2
+    r.scale = 3
     guard let cg = r.cgImage else { print("fail"); return }
-    let rep = NSBitmapImageRep(cgImage: cg)
+    // Finder трактует пиксели как точки — отдаём ровно размер окна (900×520),
+    // но рисуем в 3x и уменьшаем (сглаженно).
+    let w = 900, h = 520
+    guard let ctx = CGContext(data: nil, width: w, height: h, bitsPerComponent: 8, bytesPerRow: 0,
+                              space: CGColorSpaceCreateDeviceRGB(),
+                              bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return }
+    ctx.interpolationQuality = .high
+    ctx.draw(cg, in: CGRect(x: 0, y: 0, width: w, height: h))
+    guard let out = ctx.makeImage() else { return }
+    let rep = NSBitmapImageRep(cgImage: out)
     try? rep.representation(using: .png, properties: [:])?.write(to: URL(fileURLWithPath: path))
-    print("ok \(path)")
+    print("ok \(path) \(w)x\(h)")
 }
 
 MainActor.assumeIsolated {
