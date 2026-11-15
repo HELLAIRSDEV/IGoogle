@@ -10,6 +10,19 @@
 | 4 | Бесшовный режим (keep-alive, без обрывов) | ✅ | ping/pong, `pingInterval`, авто-reconnect |
 | 5 | В меню «Поделиться» пункт «Отправить на MacBook» | ✅ | `ShareToMacActivity` + intent-filter `ACTION_SEND` |
 
+## Скриншоты
+
+<p align="center">
+  <img src="docs/images/notch-buffer.png" width="410" alt="Островок: получен буфер"/>
+  <img src="docs/images/notch-photo.png" width="410" alt="Островок: получено фото"/>
+</p>
+
+Чёрная капсула выезжает из-под выреза MacBook (Dynamic Island-стиль): «Получен буфер» / «Получено фото».
+
+<p align="center">
+  <img src="docs/images/pixel-app.png" width="300" alt="IGoogle на Pixel"/>
+</p>
+
 ## Архитектура
 
 ```
